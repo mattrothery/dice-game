@@ -1,0 +1,136 @@
+/* Header styling */
+header h1{
+    font-family: 'Be Vietnam', sans-serif;
+    font-style: italic;
+    font-size: 2.5em;
+}
+header h2{
+    font-family: 'Be Vietnam', sans-serif;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+/* Main body styling */
+body {
+    background-color: #c6cdcf;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 5em;
+    margin-right: 5em;
+    font-size: 1em;
+    text-align: center;
+}
+hr {
+    border-top: solid;
+    color: darkslategray;
+}
+input[type = "submit"] {
+    background-color: #C0C0C0;
+    font-size: 1em;
+    border: 2px solid darkslategray;
+    border-radius: 4px;
+}
+button {
+    background-color: #C0C0C0;
+    font-size: 1em;
+    border: 2px solid darkslategray;
+    border-radius: 4px;
+}
+footer hr {
+    margin-top: 5em;
+}
+footer {
+    font-size: small;
+}
+
+/* Rules list styling */
+ol {
+    text-align: center;
+    list-style-position: inside;
+}
+li {
+    padding: 1em;
+}
+
+/* Score table styling */
+table.score-table {
+    width: 80%;
+    margin: auto;
+    border: 2px solid darkslategray;
+    border-collapse: collapse;
+    background-color: #ECECEC;
+}
+table.score-table th {
+    border-color: darkslategray;
+    border-width: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+    background-color: #C0C0C0;
+}
+table.score-table td { 
+    border-left: 2px solid darkslategray; 
+    padding: 0.2em;
+}
+table.score-table tr.no-border {
+    border-bottom: 0px;
+    border-left: 2px solid darkslategray; 
+}
+table.score-table tr{
+    border-bottom: 2px solid darkslategray;
+}
+table.score-table td.has-border{
+    border-bottom: 2px solid darkslategray;
+}
+table.score-table caption{
+    font-size: large;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+/* Play Stage styling */
+table.round-table {
+    text-align: center;
+    margin: auto;
+    border: 2px solid darkslategray;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+table.round-table td {
+    border-left: 2px solid darkslategray; 
+    padding: 0.5em;
+    background-color: #ECECEC;
+}
+table.round-table th {
+    border-color: darkslategray;
+    border-width: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 1em;
+    background-color: #C0C0C0;
+}
+
+/* End Stage styling */
+table.end-table {
+    text-align: center;
+    margin: auto;
+    border: 2px solid darkslategray;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+table.end-table td {
+    border-left: 2px solid darkslategray; 
+    padding: 0.5em;
+    background-color: #ECECEC;
+}
+table.end-table th {
+    border-color: darkslategray;
+    border-width: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+    padding: 1em;
+    background-color: #C0C0C0;
+}
+
+
+

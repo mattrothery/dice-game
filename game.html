@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en-gb">
+
+<head>
+    <title>COMP 519 Assignment 02</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Matthew Rothery">
+    <meta name="description" content="Dice Roll JavaScript game for COMP519 Assignment 2">
+    <meta name="keywords" content="dice, roll, points, game">
+    <link rel="stylesheet" type="text/css" href="style.css" title="style">
+    <script type="text/javascript" src="game.js"></script>
+</head>
+
+<body onload="hidePlay()">
+    <header>
+        <h1>Dice Roll Game</h1>
+        <h2>COMP 519 Assignment 2</h2>
+        <hr>
+    </header>
+
+    <section id="setup">
+        <p>Please enter the number of dice, between 3 and 6:</p>
+
+        <form method="POST" action="" onsubmit="validateInput(); return false">
+
+            <label>Number of Dice: <input type="text" id="dice" value=""></label>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <p id="inputFail" style="display: none">The number is not within the range. Please try again!</p>
+    </section>
+
+    <section id="play">
+        <h2>Play Stage</h2>
+        <button onclick="play()">Play</button>
+        <button onclick="end()">End Game</button>
+
+        <table class="round-table">
+            <thead>
+                <tr>
+                    <th>Round Score</th>
+                    <th>Rounds Played</th>
+                    <th>Total Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="roundScore"></td>
+                    <td id="roundsPlayed"></td>
+                    <td id="totalScore"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="end">
+        <p>Here are the results of all the rounds played:</p>
+
+        <table class="end-table">
+            <thead>
+                <tr>
+                    <th>Total Score</th>
+                    <th>Rounds Played</th>
+                    <th>Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="finalScore"></td>
+                    <td id="finalRounds"></td>
+                    <td id="avgScore"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onClick="window.location.reload();">Play Again</button>
+    </section>
+    <hr>
+
+    <section id="rules">
+        <h3>Rules of the dice game</h3>
+
+        <ol>
+            <li>Enter an number between 3 and 6 to play with that many dice. The game will start when you hit submit.
+            </li>
+            <li>Each die is then rolled, and a score for that round is calculated based on the table below.</li>
+            <li>You can keep pressing play to start a new round. The total score for all the rounds will be kept up to
+                date.</li>
+        </ol>
+
+        <table class="score-table">
+            <caption>Dice game points calculations</caption>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Points Calculation</th>
+                    <th>Example<br>(with four dice)</th>
+                    <th>Example Points Calculation</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>All dice have the same value</td>
+                    <td>60 + Sum of dice</td>
+                    <td>3,3,3,3</td>
+                    <td>60 + 3 + 3 + 3 + 3 = 72</td>
+                </tr>
+
+                <tr class="no-border">
+                    <td rowspan="2" class="has-border">All <em>but one</em> die have the same value</td>
+                    <td rowspan="2" class="has-border">40 + Sum of dice</td>
+                    <td>4,4,4,6</td>
+                    <td>40 + 4 + 4 + 4 + 6 = 58</td>
+                </tr>
+
+                <tr>
+                    <td>2,5,2,2</td>
+                    <td>40 + 2 + 5 + 2 + 2 = 51</td>
+                </tr>
+
+                <tr class="no-border">
+                    <td rowspan="3" class="has-border">A run<br>(a consecutive run of numbers)</td>
+                    <td rowspan="3" class="has-border">20 + Sum of dice</td>
+                    <td>3,4,5,6</td>
+                    <td>20 + 3 + 4 + 5 + 6 = 38</td>
+                </tr>
+
+                <tr class="no-border">
+                    <td>4,3,2,1</td>
+                    <td>20 + 4 + 3 + 2 + 1 = 30</td>
+                </tr>
+
+                <tr>
+                    <td>4,6,3,5</td>
+                    <td>20 + 4 + 6 + 3 + 5 = 38</td>
+                </tr>
+
+                <tr class="no-border">
+                    <td rowspan="2" class="has-border">All dice have different values, but not a run</td>
+                    <td rowspan="2" class="has-border">Sum of dice</td>
+                    <td>4,5,3,1</td>
+                    <td>4 + 5 + 3 + 1 = 13</td>
+                </tr>
+
+                <tr>
+                    <td>3,6,2,5</td>
+                    <td>3 + 6 + 2 + 5 = 16</td>
+                </tr>
+
+                <tr>
+                    <td>Any other outcome</td>
+                    <td>0</td>
+                    <td>4,5,3,3</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer><hr><p>Created by Matthew Rothery: <a href = "mailto: sgmrothe@liverpool.ac.uk">sgmrothe@liverpool.ac.uk</a></p>Last modification: <!--#flastmod file="game.html" --></footer>
+</body>
+
+</html>
